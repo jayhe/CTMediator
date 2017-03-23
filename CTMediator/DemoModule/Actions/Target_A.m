@@ -13,7 +13,7 @@ typedef void (^CTUrlRouterCallbackBlock)(NSDictionary *info);
 
 @implementation Target_A
 
-- (UIViewController *)Action_nativeFetchDetailViewController:(NSDictionary *)params
+- (UIViewController *)action_nativeFetchDetailViewController:(NSDictionary *)params
 {
     // 因为action是从属于ModuleA的，所以action直接可以使用ModuleA里的所有声明
     DemoModuleADetailViewController *viewController = [[DemoModuleADetailViewController alloc] init];
@@ -21,7 +21,7 @@ typedef void (^CTUrlRouterCallbackBlock)(NSDictionary *info);
     return viewController;
 }
 
-- (id)Action_nativePresentImage:(NSDictionary *)params
+- (id)action_nativePresentImage:(NSDictionary *)params
 {
     DemoModuleADetailViewController *viewController = [[DemoModuleADetailViewController alloc] init];
     viewController.valueLabel.text = @"this is image";
@@ -30,7 +30,7 @@ typedef void (^CTUrlRouterCallbackBlock)(NSDictionary *info);
     return nil;
 }
 
-- (id)Action_showAlert:(NSDictionary *)params
+- (id)action_showAlert:(NSDictionary *)params
 {
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         CTUrlRouterCallbackBlock callback = params[@"cancelAction"];
@@ -53,7 +53,7 @@ typedef void (^CTUrlRouterCallbackBlock)(NSDictionary *info);
     return nil;
 }
 
-- (id)Action_nativeNoImage:(NSDictionary *)params
+- (id)action_nativeNoImage:(NSDictionary *)params
 {
     DemoModuleADetailViewController *viewController = [[DemoModuleADetailViewController alloc] init];
     viewController.valueLabel.text = @"no image";
@@ -63,7 +63,7 @@ typedef void (^CTUrlRouterCallbackBlock)(NSDictionary *info);
     return nil;
 }
 
-- (UITableViewCell *)Action_cell:(NSDictionary *)params
+- (UITableViewCell *)action_cell:(NSDictionary *)params
 {
     UITableView *tableView = params[@"tableView"];
     NSString *identifier = params[@"identifier"];
@@ -76,7 +76,7 @@ typedef void (^CTUrlRouterCallbackBlock)(NSDictionary *info);
     return cell;
 }
 
-- (id)Action_configCell:(NSDictionary *)params
+- (id)action_configCell:(NSDictionary *)params
 {
     NSString *title = params[@"title"];
     NSIndexPath *indexPath = params[@"indexPath"];

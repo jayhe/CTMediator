@@ -11,11 +11,11 @@
 
 @interface Target_A : NSObject
 
-- (UIViewController *)Action_nativeFetchDetailViewController:(NSDictionary *)params;
-- (id)Action_nativePresentImage:(NSDictionary *)params;
-- (id)Action_showAlert:(NSDictionary *)params;
+- (UIViewController *)action_nativeFetchDetailViewController:(NSDictionary *)params;
+- (id)action_nativePresentImage:(NSDictionary *)params;
+- (id)action_showAlert:(NSDictionary *)params;
 
 // 容错
-- (id)Action_nativeNoImage:(NSDictionary *)params;
+- (id)action_nativeNoImage:(NSDictionary *)params;
 
 @end

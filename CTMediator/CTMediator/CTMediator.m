@@ -95,7 +95,7 @@
 #pragma clang diagnostic pop
     } else {
         // 有可能target是Swift对象
-        actionString = [NSString stringWithFormat:@"Action_%@WithParams:", actionName];
+        actionString = [NSString stringWithFormat:@"action_%@WithParams:", actionName];
         action = NSSelectorFromString(actionString);
         if ([target respondsToSelector:action]) {
 #pragma clang diagnostic push
